@@ -3,8 +3,15 @@ import sys
 import json
 
 def create_structure(root_folder, structure):
-        print("to be implemented")
-        #TODO: Implementation
+        for key, value in structure:
+            path = os.path.join(root_folder, key)
+            if isinstance(value, dict):
+                os.makedirs(path, exist_ok=True)
+                create_structure(path, value)
+            elif isinstance(value, str):
+                with open(path, 'w') as file:
+                    file.write(value)
+
 
 def main():
     if len(sys.argv) != 3:
