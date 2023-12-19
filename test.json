@@ -1,0 +1,12 @@
+{
+  "folder1": {
+    "file1.txt": "This is the content of file1",
+    "file2.txt": "Content of file2"
+  },
+  "folder2": {
+    "subfolder": {
+      "file3.txt": "Content of file3"
+    }
+  }
+}
+

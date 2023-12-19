@@ -3,7 +3,7 @@ import sys
 import json
 
 def create_structure(root_folder, structure):
-        for key, value in structure:
+        for key, value in structure.items():
             path = os.path.join(root_folder, key)
             if isinstance(value, dict):
                 os.makedirs(path, exist_ok=True)
