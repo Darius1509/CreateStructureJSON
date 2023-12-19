@@ -6,9 +6,15 @@ def create_structure(root_folder, structure):
         for key, value in structure.items():
             path = os.path.join(root_folder, key)
             if isinstance(value, dict):
+                if not key:
+                    print(f"Error: The key is empty")
+                    sys.exit(1)
                 os.makedirs(path, exist_ok=True)
                 create_structure(path, value)
             elif isinstance(value, str):
+                if not key:
+                    print(f"Error: The key is empty")
+                    sys.exit(1)
                 with open(path, 'w') as file:
                     file.write(value)
 
